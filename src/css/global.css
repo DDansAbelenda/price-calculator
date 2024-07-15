@@ -1,0 +1,7 @@
+:root {
+    --variable-collection-gray-light: rgba(245, 245, 245, 1);
+}
+html body {
+  font-family: "Source Sans Pro-Black", Helvetica, "Roboto";
+  background-color: var(--variable-collection-gray-light);
+}
