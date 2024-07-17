@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 
-const baseUrl = 'http://localhost:3000'; //local 
-//const baseUrl = 'https://alura-flix-api-six.vercel.app'; //api vercel 
+//const baseUrl = 'http://localhost:3000'; //local 
+const baseUrl = 'https://price-calculator-api.vercel.app'; //api vercel 
 
 /**
  * Este hook devuelve funciones que te permiten conectar con la API y realizar
