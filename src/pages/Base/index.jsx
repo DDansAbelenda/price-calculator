@@ -6,14 +6,14 @@ import Footer from "../../components/Footer"
 
 const Base = () => {
   return (
-    <main>
+    <>
       <Header />
       <Container>
         {/* Outlet es el marcador de posición para las rutas hijas */}
         <Outlet />
       </Container>
       <Footer />
-    </main>
+    </>
   );
 };
 

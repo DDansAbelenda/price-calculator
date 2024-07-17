@@ -1,7 +1,11 @@
 :root {
-    --variable-collection-gray-light: rgba(245, 245, 245, 1);
+  --variable-collection-gray-light: rgba(245, 245, 245, 1);
+  --variable-collection-black-gold: #272721;
+  --variable-collection-gray-gold: #888282;
+  --variable-collection-light-gold-hard: #ffcb20;
+  --variable-collection-light-gold-low: rgba(241, 197, 0, 0.5);
 }
 html body {
-  font-family: "Source Sans Pro-Black", Helvetica, "Roboto";
-  background-color: var(--variable-collection-gray-light);
+  font-family: "Arial", sans-serif; /* Usa una fuente moderna */
+  background-color: var(--variable-collection-gray-gold);
 }

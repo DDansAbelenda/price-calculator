@@ -1,0 +1,75 @@
+.header-container-black {
+  /*Styles*/
+  border-bottom: 4px solid var(--variable-collection-light-gold-hard);
+  background-color: var(--variable-collection-black-gold);
+  box-shadow: 0 4px 8px var(--variable-collection-light-gold-hard); /* Añade una sombra para dar profundidad */
+  /*Layouts*/
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 1rem;
+  position: relative; /*Es necesario declararla para el uso de z-index*/
+  z-index: 2; /*Posición con respecto al resto de elementos*/
+}
+.logo-container-black {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+/*Image*/
+.logo-img {
+  width: 10%;
+  height: 10%;
+}
+.logo-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000; /* Color principal */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra para dar efecto 3D */
+  background: linear-gradient(
+    to right,
+    var(--variable-collection-light-gold-hard),
+    var(--variable-collection-light-gold-low)
+  );
+  -webkit-background-clip: text;
+  background-clip: text; /* Define the standard background-clip property */
+  color: transparent;
+  font-family: "Arial", sans-serif; /* Usa una fuente moderna */
+}
+
+/*No utilizado*/
+/*Buttons*/
+/*.buttons-container-nav {
+  display: flex;
+  gap: 20px;
+}*/
+
+/*Tablet 900px a 800px*/
+@media (max-width: 900px) {
+  /*.header-container {
+    padding: 1rem;
+  }
+  .header-container button {
+    width: 8.25rem; 
+    height: 2.375rem; 
+    font-size: 0.825rem;
+  }*/
+}
+
+/*Movil 799px a 0px*/
+@media (max-width: 799px) {
+  .logo-title {
+    font-size: 100%;
+  }
+  .logo-img {
+    width: 20%;
+    height: 20%;
+  }
+  /*.header-container {
+    display: none;
+  }*/
+}

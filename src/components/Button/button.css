@@ -1,0 +1,17 @@
+button {
+  /*Layout - Size*/
+  padding: 0.75rem 1.5rem;
+  border: none;
+  width: 48%;
+  /*Style - Font*/
+  border-radius: 4px;
+  background-color: var(--variable-collection-light-gold-hard);
+  color: var(--variable-collection-black-gold);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--variable-collection-light-gold-low);
+}

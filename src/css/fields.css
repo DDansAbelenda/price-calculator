@@ -1,0 +1,73 @@
+/*
+* Estilos para los componentes:
+    * Field
+    * Textarea
+    * SelectField
+*/
+
+.input-wrapper {
+  /*Layout*/
+  display: flex;
+  flex-direction: column;
+  gap: 0.94rem;
+}
+
+.input-wrapper label {
+  /*Font*/
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem; /* 120% */
+  /*Layout*/
+  display: block;
+}
+
+.field {
+  /*Font*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem; /* 120% */
+  color: #fff;
+  /*Size*/
+  padding: 0.5rem 1rem;
+  /*Style*/
+  border-radius: 0.25rem;
+  background-color: var(--variable-collection-gray-gold);
+  border: 1px solid var(--variable-collection-gray-light);
+}
+
+.field::placeholder {
+  font-size: 1rem;
+  color: #131212;
+}
+
+.field:focus {
+  outline: none;
+}
+/*Estilos para campos del formulario editar video*/
+.edit-field {
+  /*Style*/
+  background: #03122f;
+  /*Size*/
+  border-color: var(--Blue, #2271d1);
+}
+
+/*Estilos para campos del formulario crear video*/
+.create-field {
+  /*Style*/
+  background: #191919;
+  /*Size*/
+  border-color: var(--Dark-Grey, #262626);
+}
+
+/*Tablet 900px a 800px*/
+@media (max-width: 900px) {
+}
+
+/*Movil 799px a 0px*/
+@media (max-width: 799px) {
+}

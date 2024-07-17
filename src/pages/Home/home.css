@@ -1,0 +1,44 @@
+.home-container {
+  /*Layout*/
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  flex: 1; /* Esto asegura que el contenido principal ocupe el espacio restante */
+}
+
+.form-calculator-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--variable-collection-black-gold);
+  padding: 0 2rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--variable-collection-light-gold-hard);
+}
+
+.form-calculator-container h1 {
+  /*Font*/
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--variable-collection-light-gold-hard);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+  /*Display*/
+  text-align: center;
+  padding: 0;
+  margin: 1rem 0rem 0rem;
+}
+
+.form-calculator-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-calculator-container .button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
