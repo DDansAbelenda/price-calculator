@@ -19,26 +19,32 @@
   background-color: var(--variable-collection-black-gold);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px var(--variable-collection-light-gold-hard);
   text-align: center;
+}
+.popup-content.error {
+  box-shadow: 0 4px 8px var(--variable-collection-red-error);
 }
 
 .popup-content h2 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--variable-collection-light-gold-hard);
+  color: #fff;
   margin-bottom: 1rem;
+}
+
+.popup-content.error h2 {
+  text-shadow: 2px 2px 4px var(--variable-collection-red-error);
 }
 
 .popup-content p {
   font-size: 1.2rem;
-  color: var(--variable-collection-light-gold-hard);
+  color: #fff;
   margin-bottom: 1rem;
 }
 
 .popup-content button {
   padding: 0.5rem 1rem;
-  }
+}
 
 .popup-content button:hover {
   background-color: var(--variable-collection-light-gold-low);

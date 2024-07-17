@@ -3,15 +3,18 @@
   position: relative;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
   align-items: center;
   padding: 2rem;
-  flex: 1; /* Esto asegura que el contenido principal ocupe el espacio restante */
+  width: 100%;
 }
 
 .form-calculator-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  box-sizing: border-box;
+  width: 60%;
   background-color: var(--variable-collection-black-gold);
   padding: 0 2rem 2rem;
   border-radius: 8px;
@@ -34,6 +37,7 @@
 .form-calculator-container form {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -41,4 +45,19 @@
   display: flex;
   gap: 1rem;
   justify-content: space-between;
+}
+
+/*Tablet 900px a 800px*/
+@media (max-width: 900px) {
+}
+
+/*Movil 799px a 0px*/
+@media (max-width: 799px) {
+
+  .home-container {
+    padding: 1.5rem 0.5rem;
+  }
+  .form-calculator-container {
+    width: 98%;
+  }
 }

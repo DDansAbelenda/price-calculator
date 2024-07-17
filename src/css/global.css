@@ -4,6 +4,7 @@
   --variable-collection-gray-gold: #888282;
   --variable-collection-light-gold-hard: #ffcb20;
   --variable-collection-light-gold-low: rgba(241, 197, 0, 0.5);
+  --variable-collection-red-error: rgb(90, 5, 5); 
 }
 html body {
   font-family: "Arial", sans-serif; /* Usa una fuente moderna */
