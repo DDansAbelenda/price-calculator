@@ -44,13 +44,12 @@ Field.propTypes = {
     name: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
-    onBlur: PropTypes.func.isRequired,
-    classNameInput: PropTypes.string.isRequired,
-    classNameLabel: PropTypes.string.isRequired,
-    placeholder: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+    onBlur: PropTypes.func,
+    classNameInput: PropTypes.string,
+    classNameLabel: PropTypes.string,
+    placeholder: PropTypes.string,
     required: PropTypes.bool,
-    updateValueField: PropTypes.func,
     readOnly: PropTypes.bool
 };
 
