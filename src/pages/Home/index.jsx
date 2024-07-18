@@ -122,6 +122,8 @@ const Home = () => {
     setMaximumPrice("")
     setDifferenceNegative(false);
     setMaximumAllowableCost("");
+    setGainMargin("");
+    setSalePercentValue("");
   }
 
   const closePopup = () => {
