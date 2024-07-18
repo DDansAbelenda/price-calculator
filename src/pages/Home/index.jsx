@@ -8,16 +8,18 @@ import Checkbox from "../../components/Checkbox";
 
 const Home = () => {
   //const [product, setProduct] = useState("");
-  const { finalPriceCalculator, differencePercent, proposePriceCalculator } = usePriceCalculator();
+  const { finalPriceCalculator, difference, proposePriceCalculator } = usePriceCalculator();
 
   //Estado de los campos del formulario
   const [cost, setCost] = useState("");
   const [expense, setExpense] = useState("");
   const [salePercent, setSalePercent] = useState("11");
+  const [salePercentValue, setSalePercentValue] = useState("");
   const [saleMargin, setSaleMargin] = useState("30");
+  const [gainMargin, setGainMargin] = useState("");
   const [finalPrice, setFinalPrice] = useState("");
   const [maximumPrice, setMaximumPrice] = useState("");
-  const [differencePercentResult, setDifferencePercentResult] = useState("");
+  const [differenceResult, setDifferenceResult] = useState("");
   const [maximumAllowableCost, setMaximumAllowableCost] = useState("");
   //Estado del mensaje de error
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -43,20 +45,23 @@ const Home = () => {
       isNaN(cost) ? costValue = 0 : costValue = Number(cost);
       let expenseValue;
       isNaN(expense) ? expenseValue = 0 : expenseValue = Number(expense);
-      const finalPriceValue = finalPriceCalculator(salePercentValue, saleMarginValue, costValue, expenseValue);
-      setFinalPrice(finalPriceValue);
-      return finalPriceValue;
+      const { finalPriceParse, gainMarginParse, salePercentValueParse } = finalPriceCalculator(salePercentValue, saleMarginValue, costValue, expenseValue);
+      setFinalPrice(finalPriceParse);
+      setGainMargin(gainMarginParse);
+      setSalePercentValue(salePercentValueParse);
+      return finalPriceParse;
     }
   }
 
   // Obtiene, actualiza y retorna el % de diferencia entre el tope y el precio venta
-  const getDifferencePercent = () => {
+  const getDifference = () => {
     let maximumPriceParse;
     isNaN(maximumPrice) ? maximumPriceParse = 0 : maximumPriceParse = Number(maximumPrice)
     const finalPriceValue = getFinalPrice();
-    const differencePercentValue = differencePercent(Number(finalPriceValue), maximumPriceParse);
-    setDifferencePercentResult(`${differencePercentValue}`);
-    return Number(differencePercentValue);
+    const differenceValue = difference(Number(finalPriceValue), maximumPriceParse);
+    console.log(`Diferencia desde getDifference ${differenceValue}`);
+    setDifferenceResult(`${differenceValue}`);
+    return Number(differenceValue);
   }
 
   // Obtiene y actualiza el costo máximo permitido
@@ -86,7 +91,7 @@ const Home = () => {
     try {
       getFinalPrice();
       if (isMaximumPriceOptionSelected) {
-        const difference = getDifferencePercent();
+        const difference = getDifference();
         if (difference < 0) {
           getMaximumAllowCost();
         } else {
@@ -113,7 +118,7 @@ const Home = () => {
     setFinalPrice("");
     setSalePercent("11");
     setSaleMargin("30");
-    setDifferencePercentResult("");
+    setDifferenceResult("");
     setMaximumPrice("")
     setDifferenceNegative(false);
     setMaximumAllowableCost("");
@@ -208,6 +213,7 @@ const Home = () => {
               Limpiar
             </Button>
           </div>
+          {/*Resultados del precio calculado*/}
           <Field
             type="number"
             id="finalPrice"
@@ -217,16 +223,35 @@ const Home = () => {
             placeholder="$ 0.00"
             readOnly={true}
           />
+          <Field
+            type="number"
+            id="gainMargin"
+            name="gainMargin"
+            value={gainMargin}
+            title={`Margen de ganancia al ${saleMargin}%`}
+            placeholder="$ 0.00"
+            readOnly={true}
+          />
+          <Field
+            type="number"
+            id="salePercentValue"
+            name="salePercentValue"
+            value={salePercentValue}
+            title={`Impuesto de venta al ${salePercent}%`}
+            placeholder="$ 0.00"
+            readOnly={true}
+          />
+          {/* Trabajo con el precio topado */}
           {isMaximumPriceOptionSelected &&
             <Field
               type="number"
-              id="differencePercentResult"
-              name="differencePercentResult"
-              value={differencePercentResult}
-              title="% Diferencia venta/tope"
+              id="differenceResult"
+              name="differenceResult"
+              value={differenceResult}
+              title="Diferencia venta/tope"
               placeholder="% diferencia"
               readOnly={true}
-              classNameInput={Number(differencePercentResult) >= 0 ? "positive" : "negative"}
+              classNameInput={Number(differenceResult) >= 0 ? "positive" : "negative"}
             />
           }
           {

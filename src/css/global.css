@@ -11,7 +11,7 @@ html body {
   background-color: var(--variable-collection-gray-gold);
 }
 
-/*Ajuste para los input tipo num*/
+/*Ajuste para los input tipo numeric*/
 /* Para navegadores Webkit (Chrome, Safari, Edge, Opera) */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {

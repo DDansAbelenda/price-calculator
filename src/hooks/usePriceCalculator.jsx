@@ -1,21 +1,29 @@
 export const usePriceCalculator = () => {
     const finalPriceCalculator = (salePercent, saleMargin, cost, expense) => {
+        //Precio Calculado
         const numerator = Number((1 + saleMargin) * (cost + expense));
         const denominator = (1 - salePercent - saleMargin * salePercent);
         if (denominator === 0) return 0;
-        const finalSale = Number(numerator) / Number(denominator);
-        return finalSale.toFixed(2);
+        const finalPrice = Number(numerator) / Number(denominator);
+
+        //% De la venta salePercent
+        const salePercentValue = Number(salePercent * finalPrice);
+
+        //% Margen de Ganancia % = saleMargin * (cost + expense + salePercent * finalPrice)
+        const factor1 = Number(cost + expense + salePercentValue);
+        const gainMargin = Number(saleMargin) * factor1
+
+        //Parse
+        const salePercentValueParse = salePercentValue.toFixed(4);
+        const gainMarginParse = gainMargin.toFixed(4)
+        const finalPriceParse = finalPrice.toFixed(2)
+
+        return { finalPriceParse, gainMarginParse, salePercentValueParse };
     }
-    const differencePercent = (finalPrice, maximumPrice) => {
+    const difference = (finalPrice, maximumPrice) => {
         // Diferencia enter el precio tope y precio venta
-        const difference = Math.abs(maximumPrice - finalPrice);
-        // Calculando la media de los dos valores a+b/4
-        const average = Number(((Number(maximumPrice) + Number(finalPrice)) / 4));
-        //Calculando el % de diferencia
-        let differencePercentValue = (difference / average) * 100;
-        if (isNaN(differencePercentValue)) differencePercentValue = 0;
-        if (Number(finalPrice) > Number(maximumPrice)) return -differencePercentValue.toFixed(4);
-        return differencePercentValue.toFixed(4);
+        let difference = Number(maximumPrice) - Number(finalPrice);
+        return difference.toFixed(4);
 
     }
     const proposePriceCalculator = (salePercent, saleMargin, maximumPrice, expense) => {
@@ -26,7 +34,7 @@ export const usePriceCalculator = () => {
         return maximumAllowableCost.toFixed(4);
     }
 
-    return { finalPriceCalculator, differencePercent, proposePriceCalculator }
+    return { finalPriceCalculator, difference, proposePriceCalculator }
     // venta = 1.3 * (cost + expense) / 0.857 = 1.3/0.857 * (cost + expense)
     // = 1.5169194 * (cost + expense)
 }
